@@ -1,0 +1,77 @@
+m = int(input("enter number of rows: "))
+n = int(input("enter number of columns: "))
+A = [[0 for col in range(n)] for row in range(m)]
+for i in range(m):
+    for j in range(n):
+        num = int(input("Enter Numbers For Matrix A-->> "))
+        A[i][j] = num
+
+print("The Matrix A-->>")
+print(A)
+
+B = [[0 for col in range(n)] for row in range(m)]
+for i in range(m):
+    for j in range(n):
+        num = int(input("Enter Numbers For Matrix B-->> "))
+        B[i][j] = num
+
+print("The Matrix B-->>")
+print(B)
+
+
+#Addition
+def Additing_matrix(A, B):
+    result = [[A[i][j] + B[i][j] for j in range(len(A[0]))] for i in range(len(A))]
+
+    print("Addition of Matrices-->>")
+    for r in result:
+        print(r)
+
+
+#Subtraction
+def Substracting_matrix(A, B):
+    result = [[A[i][j] - B[i][j] for j in range(len(A[0]))] for i in range(len(A))]
+
+    print("Subtraction of  Matrices-->>")
+    for r in result:
+        print(r)
+
+
+#Multiplication
+
+
+def Multiply_matrix(A, B):
+    result = [[0 for col in range(n)] for row in range(m)]
+    for i in range(len(A)):
+        for j in range(len(B[0])):
+            for k in range(len(B)):
+                result[i][j] += A[i][k] * B[k][j]
+
+    print("Multiplication Of Matrix-->>  ")
+    for r in result:
+        print(r)
+
+
+# Transpose
+def Transpose_matrix():
+    result = [[0 for col in range(n)] for row in range(m)]
+
+    for i in range(len(A)):
+        for j in range(len(A[0])):
+            result[j][i] = A[i][j]
+    print("Transpose of Matrix A -->>")
+    for r in result:
+        print(r)
+    for i in range(len(B)):
+        for j in range(len(B[0])):
+            result[j][i] = B[i][j]
+
+    print("Transpose of Matrix B -->>")
+    for r in result:
+        print(r)
+
+
+Additing_matrix(A, B)
+Substracting_matrix(A, B)
+Transpose_matrix()
+Multiply_matrix(A,B)
